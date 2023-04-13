@@ -138,7 +138,7 @@ Point vanishpoint::vanish_point_detection(Mat & image, Mat & cdst)
         }
     }
   // ************************++image with lines*******************************
-  imshow("lines",image);
+  //imshow("lines",image);
 
   return get_vanish_point(Intersection);
 }
@@ -169,7 +169,7 @@ Point vanishpoint::vp(Mat image,Mat &maskara){
   line(imresize, Point(mark_point.x, image.rows/4 + 25), Point(mark_point.x, image.rows/4 - 25), Scalar(0, 0, 255),1);
   circle(imresize,Point(mark_point.x,image.rows/4), 20, Scalar(60,233,239), FILLED);
   //circle(imresize,Point(vpts.x,im.rows/4), 20, Scalar(60,233,239),1);
-  //******************************* final mask to show*******************************
+//  //******************************* final mask to show*******************************
   imshow("VP", imresize);
 
   line(maskara, Point(mark_point.x + 25, image.rows/4), Point(mark_point.x - 25, image.rows/4), Scalar(0, 0, 255),1);
@@ -177,7 +177,7 @@ Point vanishpoint::vp(Mat image,Mat &maskara){
   circle(maskara,Point(mark_point.x,image.rows/4), 20, Scalar(200,233,239), FILLED);
 
 //******************************* final mask to show*******************************
-  cv::imshow("Mask", maskara);
+ // cv::imshow("Mask", maskara);
 
   return mark_point;
 }
@@ -223,7 +223,7 @@ void vanishpoint::init(string name)
       line(maskara, Point(vpts.x + 25, im.rows/4), Point(vpts.x - 25, im.rows/4), Scalar(0, 0, 255),1);
       line(maskara, Point(vpts.x, im.rows/4 + 25), Point(vpts.x, im.rows/4 - 25), Scalar(0, 0, 255),1);
       circle(maskara,Point(vpts.x,im.rows/4), 20, Scalar(200,233,239), FILLED);
-      cv::imshow("Mask", maskara);
+     // cv::imshow("Mask", maskara);
 
       key = waitKey(10);
     }
